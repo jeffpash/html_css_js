@@ -1,0 +1,88 @@
+/* 
+Le display
+*/
+    *{
+        margin: 0;
+        padding: 0;
+    }
+
+    html{
+        /* Passer d'une base 16 à une base 10 */
+        font-size: 60.5%;
+    }
+
+    body{
+        font-size: 2rem;
+    }
+
+    ul{
+        border: 1rem solid black;
+        width: 30rem;
+        height: 30rem;
+        margin: 100rem auto;
+
+        /* Bloquer les enfants dans le parent */
+        position: relative;
+    }
+
+    li{
+        /* Sortir la balise du flux du DOM */
+        position: absolute;
+
+        text-align: center;
+        width: 5rem;
+        height: 5rem;
+    }
+
+    p{
+        /* Figer la balise en haut de la page */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+
+        /* Modifier l'ordre des couches */
+        z-index: 1000;
+
+        background-color: grey;
+        color: white;
+        text-align: center;
+        padding: 2rem;
+    }
+
+    .commonColors{
+        color: white;
+    }
+
+    #redColor{
+        background-color: red;
+
+        /* Repositionner les balises */
+        bottom: 0;
+        right: 0;
+    }
+
+    #blueColor {
+        background-color: blue;
+
+        /* Repositionner les balises */
+        top: 0;
+        left: 0;
+    }
+
+    #purpleColor{
+        background-color: purple;
+
+        /* Repositionner les balises */
+        bottom: 0;
+        left: 0;
+    }
+
+    #greenColor{
+        background-color: green;
+
+        /* Repositionner les balises */
+        top: 0;
+        right: 0;
+    }
+/**/

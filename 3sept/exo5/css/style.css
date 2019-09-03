@@ -1,0 +1,45 @@
+/* 
+Le display
+*/
+    *{
+        margin: 0;
+        padding: 0;
+    }
+
+    html{
+        /* Passer d'une base 16 à une base 10 */
+        font-size: 60.5%;
+    } 
+
+    body{
+        font-size: 2rem;
+    }
+
+    ul{
+        border: .5rem solid red;
+    }
+
+    li {
+        display: inline-block;
+    }
+
+    a {
+        text-decoration: none;
+        padding: 3rem;
+        display: inline-block;
+        color: white;
+        background: grey;
+
+        border-left: .5rem solid grey;
+
+        /* Gérer la trransition */
+        transition: all .3s;
+    }
+
+    /* Sélectionner l'état hover d'une balise */
+    a:hover{
+        border-left: 1rem solid black;
+
+    }
+
+/**/

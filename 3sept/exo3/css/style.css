@@ -1,0 +1,26 @@
+/* 
+Le display
+*/
+    *{
+        margin: 0;
+        padding: 0;
+    }
+
+    html{
+        /* Passer d'une base 16 à une base 10 */
+        font-size: 60.5%;
+    }
+
+    body{
+        font-size: 2rem;
+    }
+
+    ul{
+        border: .5rem solid red;
+    }
+
+    li {
+        display: inline-block;
+        margin: 3rem;
+    }
+/**/

@@ -1,0 +1,21 @@
+/* 
+Mise en forme typographique
+*/
+    html{
+        /* Passer d'une base 16 à une base 10 */
+        font-size: 60.5%;
+    }
+
+    body{
+        font-family: sans-serif;
+        font-size: 1rem;
+        line-height: 3rem;
+        letter-spacing: .1rem;
+        font-weight: normal;
+        font-style: normal;
+        text-transform: uppercase;
+        text-decoration: underline;
+        text-shadow: 1rem 1rem 2rem transparent;
+        color: brown;
+    }
+/**/

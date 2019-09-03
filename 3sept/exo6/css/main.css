@@ -1,0 +1,265 @@
+/* 
+Reset
+*/
+    /* Ajouter des variables */
+    :root{
+        --dark-color: #2c3e50;
+        --light-color: #1abc9c;
+    }
+
+    /* Sélectionner toutes les balises HTML */
+    *{
+        /* Supprrimer toutes les marrges */
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    /* Passer d'une base 16 à une base 10 (1rem = 10px) */
+    html{
+        font-size: 62.5%;
+    }
+
+    body{
+        font-family: sans-serif;
+        font-size: 2rem;
+        color: white;
+    }
+
+    a{
+        /* Supprimer le soulignement */
+        text-decoration: none;
+        color: inherit;
+    }
+
+    a, button{
+        /* Gestion de la transition */
+        transition: all .3s;
+    }
+
+    /* Sélecteur multiple */
+    nav, h1, h2, h3{
+        text-transform: uppercase;
+    }
+
+    h1{
+        font-size: 6rem;
+    }
+
+    h2{
+        text-align: center;
+        color: var(--dark-color);
+        margin-bottom: 3rem;
+    }
+
+    img{
+        /* L'image ne sera jamais plus granbde que le body || parent */
+        max-width: 100%;
+    }
+
+    .maxWidth{
+        max-width: 100rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+/**/
+
+/* 
+Header
+*/
+    header, #about{
+        background-color: var(--light-color);
+    }
+
+    header, #portfolio, #about, #contact{
+        margin-bottom: 6rem;
+    }
+
+    header{
+        text-align: center;
+        padding: 20rem 0 15rem 0;
+    }
+
+    nav{
+        text-align: right;
+        font-weight: bold;
+        background-color: var(--dark-color);
+        padding: 3rem;
+
+        /* Figer la NAV en haut de la page */
+        position: fixed;
+        z-index: 1000;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    /* Les balise LI de la NAV */
+    nav li{
+        margin-left: 6rem;
+    }
+
+    /* Sélectioner la première balise LI de la NAV */
+    nav li:first-child{
+        font-size: 3rem;
+        margin-left: 0;
+
+        /* Placer la balise à gauche de son parent */
+        float: left;
+    }
+
+    header img{
+        width: 24rem;
+    }
+/**/
+
+/* 
+Portfolio
+*/
+    #portfolio{
+        text-align: center;
+    }
+
+    #portfolio li {
+        line-height: 0;
+        /* Bloquer les enfants dans le parent */
+        position: relative;
+    }
+
+    #portfolio a{
+        /* Repositionner la balise dans son parrent */
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        background-color: var(--light-color);
+        opacity: 0;
+    }
+
+    /* Modifier la balise au survole */
+    #portfolio a:hover{
+        opacity: .8;
+    }
+
+    i.fa.fa-plus, footer i {
+        font-size: 5rem;
+
+        /* Centrage parfait */
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+/**/
+
+/* 
+About
+*/
+    #about{
+        padding: 6rem;
+        text-align: center;
+    }
+
+    #about h2{
+        color: white;
+    }
+
+    #about p, footer article{
+        vertical-align: top;
+        margin-bottom: 3rem;
+    }
+
+    #about p {
+        padding: 0 1rem;
+        text-align: left;
+    }
+
+    #about button, #contact button {
+        font-size: 2rem;
+        padding: 2rem;
+        background-color: transparent;
+        border: .2rem solid white;
+        color: white;
+        border-radius: 1rem;
+    }
+
+    #about button:hover{
+        background-color: white;
+        color: black;
+    }
+/**/
+
+/* 
+Contacts
+*/
+    #contact{
+        color: var(--dark-color);
+        max-width: 75rem;
+    }
+
+    label, input, textarea{
+        display: block;
+        width: 100%;
+    }
+
+    input, textarea {
+        border: none;
+        border-bottom: .2rem solid #eee;
+        margin-bottom: 3rem;
+        font-size: 2rem;
+        padding: 2rem 0;
+    }
+
+    #contact button{
+        background-color: var(--light-color);
+    }
+
+    #contact button:hover{
+        background-color: var(--dark-color);
+    }
+/**/
+
+/* 
+Footer
+*/
+    footer{
+        background-color: var(--dark-color);
+        padding-top: 6rem;
+        text-align: center;
+    }
+    
+    footer section:last-child{
+        background-color: black;
+        padding: 3rem;
+    }
+
+    footer li {
+        border: .3rem solid white;
+        width: 5rem;
+        height: 5rem;
+        border-radius: 50%;
+        position: relative;
+    }
+/**/
+
+/* 
+Media queries
+*/
+    @media screen and (min-width: 1000px){
+        
+        li, #about p, footer article{
+            display: inline-block;
+        }
+
+        #portfolio li, footer article {
+            width: 31.9%;
+            margin: .5rem;
+        }
+
+        #about p {
+            width: 49%;
+        }
+    }
+/**/
