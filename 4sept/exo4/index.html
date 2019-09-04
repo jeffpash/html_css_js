@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Exo 4 : les fonctions</title>
+    </head>
+    <body>
+        <h1>Exo 4 : les fonctions</h1>
+
+        <!-- Le script s'ajoute juste avant la fin du body -->
+        <script>
+            
+            /*
+            Déclaration d'une fonction ES5/ES6
+            */
+                // ES5
+                function sayHello(user){
+                    console.log('Hello ' + user);
+                };
+                sayHello('Julien');
+
+                function skills(first, seconde, third, fourth){
+                    console.log('Vos compétences sont '+ first + ", " + seconde + ", " + third + ' et ' + fourth);
+                };
+                skills('HTML', 'CSS', 'Javascript', 'Angular.io');
+
+                // ES6
+                const sayCiao = (user) => {
+                    console.log(`Ciao ${user}`);
+                };
+                sayCiao('Pierre');
+            //
+
+            /*
+            Specificités ES6
+            */
+                const sayCiaoEs6 = () => console.log(`Ciao`);
+                sayCiaoEs6();
+                
+                const sayHelloEs6 = user => console.log(`Hello ${user}`);
+                sayHelloEs6();
+
+                /*
+                sayBonjourEs6 function
+                This function is used to say "bonjour" to a particular user
+                @param user: String
+                @return console: String
+                */
+                const sayBonjourEs6 = (user = 'Pierre') => console.log(`Bonjour ${user}`);
+                sayBonjourEs6();
+                sayBonjourEs6('Julien');
+
+                const userSkills = (name, ...skills) => {
+                    console.log(name);
+                    console.log(skills);
+                }
+                userSkills('Julien', 'Html', 'CSS', 'Javascript', 'Angular.IO', 'NodeJS');
+            //
+
+
+        </script>
+    </body>
+</html>

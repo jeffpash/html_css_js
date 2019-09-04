@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Exo2 : les tableaux et les objets</title>
+    </head>
+    <body>
+        <h1>Exo2 : les tableaux et les objets</h1>
+
+        <!-- Le script s'ajoute juste avant la fin du body -->
+        <script>
+
+            /*
+            Déclarations
+            */
+                let myArray = [`String`, true, 12.23];
+                let myObject = {
+                    age: 40,
+                    name: `Julien`,
+                    skills: [ `HTML`, `CSS`, `JS` ],
+                    sayHello: () => console.log(`Hello world`)
+                };
+            //
+
+            /*
+            Manipuler un tableau
+            */
+                console.log(myArray);
+
+                // Sélectionner un index du tableau
+                console.log(myArray[0]);
+
+                // Connaitre la taille d'un tableau
+                console.log(myArray.length);
+
+                // Ajouter un index dans un tableau
+                myArray.push(myObject);
+                console.log(myArray);
+                console.log(myArray.length);
+
+                // Supprimer un index
+                let slicedArray = myArray.slice(1);
+                console.log(slicedArray);
+                console.log(myArray);
+            //
+        </script>
+    </body>
+</html>

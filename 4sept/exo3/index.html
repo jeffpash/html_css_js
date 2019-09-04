@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Exo3 : les objets</title>
+    </head>
+    <body>
+        <h1><u>Exo3 : les objets</u></h1>
+
+        <!-- Le script s'ajoute juste avant la fin du body -->
+        <script>
+            
+            /*
+            Déclaration
+            */
+                // Déclarer un objet
+                let myObject = {
+                    age: 39,
+                    isMajor: !false,
+                    name: `Julien`,
+                    skills: [ `HTML`, `CSS`, `JS` ],
+                    sayHello: () => console.log(`Hello world!`)
+                };
+
+                // Déclarer un type d'objet (constructor)
+                function User(userName, email, password){
+                    this.userName = userName;
+                    this.email = email;
+                    this.password = password;
+                };
+
+                // Ajouter une méthodee au constructor
+                User.prototype.sayHello = function(){
+                    console.log( `Salut ${this.userName} !` );
+                };
+
+                let julien = new User('Julien Noyer', 'juju@juju.com', 'azertyuiop');
+                let pierre = new User('Pierre Mektoub', 'pierre@pierre.com', 'qsdfghjklm');
+                console.log({julien, pierre});
+                julien.sayHello();
+                pierre.sayHello();
+            //
+
+            /*
+            Manipuler un objet
+            */
+                // console.log(myObject.age);
+                myObject.name += ` Noyer`;
+                myObject.age++;
+                myObject.skills.push('IOT');
+                // console.log(myObject);
+                // myObject.sayHello();
+            //
+        </script>
+    </body>
+</html>

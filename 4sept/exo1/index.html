@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Exo1 : les variables</title>
+    </head>
+    <body>
+        <h1>Exo1 : les variables</h1>
+
+        <!-- Le script s'ajoute juste avant la fin du body -->
+        <script>
+
+            /*
+            Les variables ES5 et ES6
+            */
+                var myVar = 'Ma variable c\'est'; // ES5
+                //
+                let myNewVar = "Une autre \"variable\""; // ES6
+                const myConst = `Les "backquotes" c'est trop bien`; // ES6
+            //
+
+            /*
+            Les types de variable
+            */
+                let myString = `Du texte`;
+                let myInteger = 123456789;
+                let myFloat = 12.6;
+                let myBoolean = true;
+                let myArray = [`String`, true, 12.23, myConst, [false, myInteger]];
+                let myHtmlTag = document.querySelector('h1');
+                let myObject = {
+                    age: 40,
+                    name: `Julien`,
+                    skills: [ `HTML`, `CSS`, `JS` ],
+                    sayHello: () => console.log(`Hello world`)
+                };
+
+                console.log({ myString, myInteger, myFloat, myBoolean, myArray, myHtmlTag, myObject });
+            //
+
+            /*
+            Gestion des strings
+            */
+                let firstName = `Julien`;
+                let lastName = `Noyer`;
+
+                // Version ES5
+                console.log('Bonjour ' + firstName + " " + lastName + " !");
+
+                // Version ES6
+                let helloUser = ` :<br><u>Bonjour</u> <i>${firstName} ${lastName}</i> !`;
+                myHtmlTag.innerHTML += helloUser;
+            //
+        </script>
+    </body>
+</html>

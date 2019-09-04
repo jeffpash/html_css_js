@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Exo 5 : les comparateurs</title>
+    </head>
+    <body>
+        <h1>Exo 5 : les comparateurs</h1>
+
+        <!-- Le script s'ajoute juste avant la fin du body -->
+        <script>
+            
+            /*
+            Déclarations
+            */
+                let stringNumber = `un`;
+                let numberString = `1`;
+                let numberInteger = 1;
+                let numberBoolean = true;
+            //
+
+            /*
+            Les opérateurs de comparaison
+            */
+                // Comparateur d'égalité simple ==
+                console.log( numberString == stringNumber );
+                console.log( numberString == numberInteger );
+                console.log( numberBoolean == numberInteger );
+                console.log( numberBoolean == numberInteger == numberString );
+
+                // Comparateur d'égalité strict ===
+                console.log( numberString === numberInteger );
+                console.log( numberBoolean === numberInteger );
+                console.log( numberBoolean === numberInteger === numberString );
+
+                // Comparateur d'inégalité simple !=
+                console.log( numberInteger != numberString );
+
+                // Comparateur d'inégalité strict !==
+                console.log( numberInteger !== numberString );
+
+                // Connaitre la valeur d'une variable
+                console.log( typeof numberBoolean );
+
+                // Connaitre le nombre de caractères d'une string
+                console.log( numberString.length );
+                console.log( stringNumber[2] )
+            //
+        </script>
+    </body>
+</html>

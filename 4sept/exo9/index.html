@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Exo 9 : moyenne</title>
+    </head>
+    <body>
+        <button>Ajouter une note entre 0 et 20</button>
+        <script>
+        
+            /*
+            Déclarations
+            */
+                let notes = [];
+                let myButton = document.querySelector('button');
+            //
+
+            /*
+            Fontion pour calculer la moyenne
+            */
+                const defineAverage = () => {
+                    // Définir une variable pour le calcule de la moyenne
+                    let average = 0;
+
+                    // Fairer une bouclen sur un tableau
+                    for( let item of notes ) average += item;
+
+                    // Calculer la moyenne
+                    console.log( average / notes.length );
+                };
+            //
+
+            /*
+            Capter le clic sur le bouton
+            */
+                myButton.addEventListener('click', () => {
+                    // Demander une nouvelle note
+                    let newNote = prompt('Ajouter une note');
+                    let intNote = parseInt(newNote);
+
+                    // Vérifier la note
+                    if( intNote.toString() == 'NaN' || intNote > 20 ){
+                        alert('On a dit une note entre 0 et 20 !');
+                    } 
+                    else{
+                        // Ajouter la note dans le tableau
+                        notes.push(intNote);
+
+                        // Calculer la moyenne
+                        defineAverage();
+                    };
+                });
+            //
+        
+        </script>
+    </body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Exo 8 : les boucles</title>
+       
+    </head>
+    <body>
+        <h1>Exo 8 : les boucles</h1>
+
+        <script>
+        
+            /*
+            Déclaration
+            */
+                // Déclarer un type d'objet (constructor)
+                function User(userName, age){
+                    this.userName = userName;
+                    this.age = age;
+                };
+
+                // Définition d'une collection de données
+                const dataCollection = [
+                    new User('Julien', 40),
+                    new User('Pierre', 22),
+                    new User('Marie', 34),
+                    new User('Toto', 24),
+                    new User('Fuu', 87)
+                ];
+
+                const julien = new User('Julien', 40);
+
+                let averageFor = 0;
+                let averageWhile = 0;
+            //
+
+            /*
+            Faire une boucle sur une tableau (collection de données)
+            */
+                // For
+                for( i = 0; i < dataCollection.length; i++ ){
+                    averageFor += dataCollection[i].age;
+                };
+                console.log(averageFor / dataCollection.length);
+
+                // While
+                let int = 0;
+                while( int < dataCollection.length ){
+                    averageWhile += dataCollection[int].age;
+                    int++;
+                }
+                console.log(averageWhile / dataCollection.length);
+                
+
+                // Map
+                dataCollection.map( item => {
+                    console.log(item.age);
+                });
+
+                // For..of
+                for( let item of dataCollection ){
+                    console.log(item.age);
+                };
+
+                // Booucle sur un objet
+                for( let prop in julien ){
+                    console.log(prop);
+                    console.log(julien[prop]);
+                };
+            //
+        </script>
+    </body>
+</html>
