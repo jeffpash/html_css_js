@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Chifoumi Javascript</title>
+        <meta name="author" content="Julien Noyer">
+        <meta name="keywords" content="chifoumi, javascript, jouer, game, Julien_Noyer">
+        <meta name="description" content="Réalisation d'un chifoumi en Javascript par Julien Noyer pour jouer contre votre ordinateur">
+
+        <!-- Le CSS doit être intégré à la fin de la balise HEAD -->
+        <link rel="stylesheet" href="./css/style.css">
+    </head>
+    <body>
+        <!-- Ouverture -->
+        <header>
+            <h1>Chifoumi Javascript <span>Jouer contre votre ordinateur</span></h1>
+            <nav>
+                <ul class="inlineBlock">
+                    <li>
+                        <button button-data="stone">
+                            <img src="./img/noun_rock_5846.png" alt="Image d'une pierre">
+                        </button>
+                    </li>
+                    <li>
+                        <button button-data="paper">
+                            <img src="./img/noun_Paper_1091290.png" alt="Image d'une feuille">
+                        </button>
+                    </li>
+                    <li>
+                        <button button-data="scissors">
+                            <img src="./img/noun_Scissors_2826183.png" alt="Image de ciseaux">
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Contenu principal -->
+        <main>
+            <!-- Zone de jeu -->
+            <section class="inlineBlock">
+                <article id="userCard" class="close">
+                    <img src="./img/noun_rock_5846.png" alt="Image d'une pierre">
+                </article>
+
+                <article id="computerCard" class="close">
+                    <img src="./img/noun_Paper_1091290.png" alt="Image d'une feuille">
+                </article>
+
+                <!-- Résultat -->
+                <aside class="close">
+                    <p>Perdu...</p>
+                </aside>
+            </section>
+
+            <!-- Score -->
+            <section>
+                <button id="playButton" class="close">Jouer</button>
+                <h2>Score <span id="userScore"></span> à <span id="computerScore"></span></h2>
+            </section>
+        </main>
+
+        <!-- Fermeture -->
+        <footer>
+            <p>Under <a href="https://fr.wikipedia.org/wiki/WTFPL" target="_blank">WTFPL</a> public Licence - Paris 2019</p>
+            <!-- 
+                Les targets HTML
+                https://www.w3schools.com/tags/att_a_target.asp
+            -->
+        </footer>
+
+        <!-- Le Javascript s'intègre juste avant la fin du BODY -->
+        <script src="./script.js"></script>
+    </body>
+</html>

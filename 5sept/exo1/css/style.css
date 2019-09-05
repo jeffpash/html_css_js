@@ -1,0 +1,152 @@
+/*
+Reset CSS
+Faire en sorte de supprimer certains style du navigateur (user-agent)
+pour faciliter le design d'une page
+*/
+    /* Sélectionner toutes les balises HTML */
+    *{
+        /* Supprimer toutes les marges */
+        margin: 0; /* ext. */
+        padding: 0; /* int. */
+
+        /* 
+        Intégrer les bordures et les paddings
+        dans la taille des balises (CSS3)
+        https://www.w3schools.com/css/css3_box-sizing.asp
+        */
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    /* Configurer l'utilisation des cadratins (rem) */
+    html{
+        font-size: 62.5%; /* Passer d'une base 16 à une base 10 (1rem = 10px) */
+    }
+
+    /* Utiliser la balise BODY pour définir la police de caractère principale */
+    body{
+        font-family: sans-serif;
+        font-size: 2rem;
+        font-weight: normal;
+        text-align: center;
+    }
+
+    /* Gestion des transitions (CSS3) */
+    a, button, main article{
+        -webkit-transition: all .3s;
+        -moz-transition: all .3s;
+        -ms-transition: all .3s;
+        -o-transition: all .3s;
+        transition: all .3s;
+    }
+
+    a{
+        text-decoration: none; /* Supprimer les soulignements */
+        color: inherit; /* La couuleur est définie sur la parent de la balise A */
+    }
+
+    /* Sélectionner les balise A dont la TARGET est _BLANK */
+    a[target="_blank"]{
+        border-bottom: .1rem dotted black;
+    }
+
+    /* Faire en sorte que les images ne dépassent jamais la taille du parent */
+    img{
+        max-width: 100%;
+    }
+/**/
+
+/* 
+Global
+*/
+    .inlineBlock > *{
+        display: inline-block;
+    }
+
+    .close{
+        transform: rotateY(270deg);
+        -webkit-transform: rotateY(270deg);
+        -moz-transform: rotateY(270deg);
+        -ms-transform: rotateY(270deg);
+        -o-transform: rotateY(270deg);
+    }
+
+    .win{
+        background-color: green;
+    }
+
+    .lose{
+        background-color: red;
+    }
+/**/
+
+/* 
+Header
+*/
+    h1{
+        font-size: 5rem; /* REM prend comme base HTML */
+        margin: 4rem auto 2rem auto;
+    }
+
+    h1 span{
+        font-size: .5em; /* EM prend comme base le PARENT */
+        font-weight: normal;
+        display: block;
+    }
+
+    header li{
+        width: 10rem;
+    }
+
+    header button{
+        padding: 2rem;
+
+        /* Transformer un carré en rond (CSS3) */
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+        border-radius: 50%;
+    }
+/**/
+
+/* 
+Main
+*/
+   
+
+    main article{
+        width: 30%;
+        margin: 3rem;
+        border: .5rem solid black;
+        
+        transform: rotateY(0deg);
+        -webkit-transform: rotateY(0deg);
+        -moz-transform: rotateY(0deg);
+        -ms-transform: rotateY(0deg);
+        -o-transform: rotateY(0deg);
+    }
+
+    main section{
+        /* Bloquer les enfants dans le parent */
+        position: relative;
+    }
+
+    main aside{
+        color: white;
+        background-color: gray;
+        width: 30rem;
+        padding: 2rem;
+
+        /* Repositionner une balise */
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform:  translate(-50%, -50%);
+        -webkit-transform:  translate(-50%, -50%);
+        -moz-transform:  translate(-50%, -50%);
+        -ms-transform:  translate(-50%, -50%);
+        -o-transform:  translate(-50%, -50%);
+    }
+/**/
