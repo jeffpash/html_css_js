@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Exo3 : Fonction asynchrone GET et POST</title>
+    </head>
+    <body>
+        <h1>Exo2 : Fonction asynchrone</h1>
+        <script>
+            const asyncFetch = async (method, path, data = undefined) => {
+                // Création d'une variable pour la requète
+                let apiResponse;
+
+                /*
+                Mise en place du CRUD
+                Requêtes Fetch POST/GET/PUT/DELETE
+                */
+                    if( method === 'GET' ){ // Lire
+                        apiResponse = await fetch(path);
+                    }
+                    else if( method === 'POST' || method === 'PUT' ){ // Ajouter || Editer
+                        const options = {
+                            method: method,
+                            headers:{
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify(data)
+                        };
+                        apiResponse = await fetch(path, options)
+                    }
+                    else if( method === 'DELETE' ){ // Supprimer
+                        const options = {
+                            method: 'DELETE',
+                            headers:{
+                                'Content-Type': 'application/json'
+                            }
+                        };
+                        apiResponse = await fetch(path , options)
+                    }
+                //
+
+                /*
+                Vérifier le status de la requête
+                */
+                    if( apiResponse.status === 200 || apiResponse.status === 201 ){
+                        // Extraire les données de la requête
+                        const jsonData = await apiResponse.json();
+                        // Retourner une Promise
+                        return Promise.resolve(jsonData);
+                    }
+                    else{
+                        // Retourner une Promise
+                        return Promise.reject(apiResponse);
+                    };
+                //
+            };
+
+
+
+
+
+
+
+            asyncFetch('GET', 'https://jsonplaceholder.typicode.com/posts')
+            .then( apiResponse => {
+                console.log(apiResponse);
+            })
+            .catch( apiError => {
+                console.error(apiError);
+            });
+
+            asyncFetch(
+                'POST', 
+                'https://jsonplaceholder.typicode.com/posts', 
+                { title: 'Julien', body: 'bar', userId: 1 }
+            )
+            .then( apiResponse => {
+                console.log(apiResponse);
+            })
+            .catch( apiError => {
+                console.error(apiError);
+            });
+
+            asyncFetch(
+                'PUT', 
+                'https://jsonplaceholder.typicode.com/posts/1', 
+                { title: 'Julien', body: 'bar', userId: 1 }
+            )
+            .then( apiResponse => {
+                console.log(apiResponse);
+            })
+            .catch( apiError => {
+                console.error(apiError);
+            });
+
+            asyncFetch(
+                'DELETE', 
+                'https://jsonplaceholder.typicode.com/posts/3'
+            )
+            .then( apiResponse => {
+                console.log(apiResponse);
+            })
+            .catch( apiError => {
+                console.error(apiError);
+            });
+        </script>
+    </body>
+</html>

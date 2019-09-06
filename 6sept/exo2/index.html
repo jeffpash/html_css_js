@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Exo2 : Fonction asynchrone</title>
+    </head>
+    <body>
+        <h1>Exo2 : Fonction asynchrone</h1>
+        <script>
+
+            const apiPath = [ 
+                'https://jsonplaceholder.typicode.com/todos',
+                'https://jsonplaceholder.typicode.com/posts',
+                'https://jsonplaceholder.typicode.com/comments',
+                'https://jsonplaceholder.typicode.com/albums',
+                'https://jsonplaceholder.typicode.com/photos'
+            ]
+        
+            const asyncFetch = async (path) => {
+                // Lancer la requête
+                const apiResponse = await fetch(path);
+
+                // Vérifier le status de la requête
+                if( apiResponse.status === 200 ){
+                    // Extraire les données de la requête
+                    const jsonData = await apiResponse.json();
+
+                    // Retourner une Promise
+                    return Promise.resolve(jsonData);
+                }
+                else{
+                    // Retourner une Promise
+                    return Promise.reject(apiResponse);
+                };
+            };
+
+            asyncFetch(apiPath[1])
+            .then( apiResponse => {
+                console.log(apiResponse);
+            })
+            .catch( apiError => {
+                console.error(apiError);
+            });
+        </script>
+    </body>
+</html>

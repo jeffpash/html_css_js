@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Exo 1 : Fetch</title>
+    </head>
+    <body>
+        <h1>Requête Fetch sur <a href="https://jsonplaceholder.typicode.com" target="_blank">une API</a></h1>
+        <ul></ul>
+
+        <script>
+            // Lancer la requête
+            fetch('https://jsonplaceholder.typicode.com/posts')
+            // Success
+            .then( apiResponse => {
+                console.log(apiResponse);
+                // Vérifier la reqête
+                if(apiResponse.status === 200){
+                    return apiResponse.json();
+                }
+            }) 
+            // Get data
+            .then( data => {
+                console.log(data);
+                // Boucle sur la collection de donnés
+                for( let item of data ){
+                    document.querySelector('ul').innerHTML += `
+                        <li>
+                            <h2>${item.title}</h2>
+                            <p>${item.body}</p>
+                        </li>
+                    `;
+                };
+            })
+            // Error
+            .catch( apiError => {
+                console.error(apiError);
+            }); 
+        </script>
+    </body>
+</html>
